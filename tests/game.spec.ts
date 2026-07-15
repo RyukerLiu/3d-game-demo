@@ -25,7 +25,7 @@ test('complete player-visible loop from start to reversal', async ({ page }) => 
   const errors:string[]=[]
   page.on('console', msg => { if (msg.type()==='error') errors.push(msg.text()) })
   page.on('pageerror', err => errors.push(err.message))
-  await page.goto('/')
+  await page.goto('./')
   await expect(page.locator('#intro')).toHaveClass(/visible/)
   await expect(page.locator('canvas')).toBeVisible()
   await page.getByRole('button', { name: /進入荒野/ }).click()
@@ -53,7 +53,7 @@ test('complete player-visible loop from start to reversal', async ({ page }) => 
 })
 
 test('restart returns to the opening state', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('./')
   await page.getByRole('button', { name: /進入荒野/ }).click()
   await page.evaluate(()=>{window.__GAME__.collectAll();window.__GAME__.build();window.__GAME__.enterShelter()})
   await expect(page.locator('#ending')).toHaveClass(/visible/, {timeout:3000})
