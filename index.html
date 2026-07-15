@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111d26" />
+    <meta name="description" content="《最後一盞燈》— 60 秒 3D 生存建造劇情 Prototype" />
+    <title>最後一盞燈｜3D 生存建造 Prototype</title>
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="game"></canvas>
+      <div id="vignette"></div>
+      <header class="hud">
+        <div class="brand"><span>LAST LIGHT</span><strong>最後一盞燈</strong></div>
+        <div id="objective" class="objective">在入夜前找到 3 份材料</div>
+        <div id="inventory" class="inventory" aria-label="材料進度"></div>
+      </header>
+      <div id="prompt" class="prompt hidden"></div>
+      <div class="controls"><b>WASD</b> 移動 <i></i><b>E</b> 互動</div>
+      <div id="toast" class="toast hidden"></div>
+      <div id="intro" class="modal visible">
+        <div class="eyebrow">A 60-SECOND SURVIVAL STORY</div>
+        <h1>天黑之前，<br><em>蓋一個家。</em></h1>
+        <p>荒野裡只剩一個建造點。找齊三份材料，撐過今晚。</p>
+        <button id="start">進入荒野 <span>→</span></button>
+        <small>桌面瀏覽器 · WASD 移動 · E 互動</small>
+      </div>
+      <div id="ending" class="modal ending">
+        <div class="eyebrow">TRANSMISSION 17</div>
+        <h2>「你又蓋在<br>同一個地方。」</h2>
+        <p>終端機亮起。螢幕裡的你比現在老了很多。</p>
+        <blockquote>別相信門外那個我。<br>避難所從來不是為了擋住黑夜——<br><b>是為了把你關在裡面。</b></blockquote>
+        <button id="restart">再試一次 <span>↻</span></button>
+      </div>
+      <div id="fade"></div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
